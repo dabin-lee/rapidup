@@ -11,9 +11,6 @@ export const useFetchTitle = () => {
         onSuccess: (data) => {
             // console.log("data: ", data);
             QueryClient.setQueryData(["productList"], (oldQueryData) => {
-                // console.log("data!!!!!:", data);
-                // console.log("oldQueryData: ", oldQueryData);
-
                 const found = oldQueryData.list.find(
                     (item) => item.id === data.id
                 );
@@ -21,8 +18,5 @@ export const useFetchTitle = () => {
             });
             QueryClient.invalidateQueries(["productList", data.id]);
         },
-        // onError: (err) => {
-        //     console.log("err:", err.message, "페치데이터 에러");
-        // },
     });
 };

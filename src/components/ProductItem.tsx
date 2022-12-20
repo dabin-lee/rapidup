@@ -18,7 +18,7 @@ export const ProductItem = ({ item, onInputChange }: IProductsProps) => {
     return (
         <div className="flex w-full h-14 mt-1 p-2 gap-4 items-center border">
             <img src={item.selectedThumbnailUrl} alt="img" width="25px" />
-            <div className="flex w-full justify-between gap-2">
+            <div className="flex w-96 justify-between gap-2">
                 {editBox ? (
                     <>
                         <Input.Group compact>
@@ -40,7 +40,6 @@ export const ProductItem = ({ item, onInputChange }: IProductsProps) => {
                     </div>
                 )}
                 <Button onClick={() => setOpen(true)}>편집</Button>
-                {/* <Button onClick={() => console.log(item.id)}>편집</Button> */}
                 {open && (
                     <ItemModal item={item} open={open} setOpen={setOpen} />
                 )}

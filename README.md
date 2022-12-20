@@ -1,46 +1,70 @@
-# Getting Started with Create React App
+# rapid 과제
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## ✔ 디렉토리 구조
 
-## Available Scripts
+```
+📦src
+┣ 📂atom
+┃ ┗ 📜state.ataom.js
+┣ 📂components
+┃ ┣ 📜itemModal.tsx
+┃ ┣ 📜ProductItem.tsx
+┃ ┗ 📜ProductsDetails.tsx
+┣ 📂hooks
+┃ ┣ 📜axios.js
+┃ ┣ 📜requests.js
+┃ ┗ 📜useFetchData.js
+┣ 📂pages
+┃ ┣ 📜login.tsx
+┃ ┗ 📜main.tsx
+┣ 📂utils
+┃ ┗ 📜auth.js
+┣ 📜App.tsx
+┣ 📜index.css
+┗ 📜index.tsx
+```
 
-In the project directory, you can run:
+## 기능
 
-### `npm start`
+```
+✅ 1. 로그인하기
+  - 로그인 성공 시 access_token 토큰이 반환
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+✅ 2. 목록 불러오기
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+✅ 3. 목록에서 바로 상품명 수정할 수 있게 구현하기
+    - 상품명 수정 시 1초 딜레이 후 상품 업데이트 API 요청
+    - 상품명 수정 시 다른 상품 리렌더링되지 않게 하기
 
-### `npm test`
+✅ 4. 상품 편집
+    - 상품 편집 버튼을 누르면 상품명을 수정할 수 있는 팝업
+    - (모달) 수정버튼을 누르면 업데이트 API를 요청
+    - 팝업 닫히고 상품명이 반영
+    - 수정한 상품만 리렌더링
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 미해결 부분
 
-### `npm run build`
+```
+- client state부분에 정리
+    <img width="342" alt="errImg" src="https://user-images.githubusercontent.com/57528886/208594322-b57163e1-fede-4a1b-ae8b-4d16899c89a8.png">
+    - 구현내용 3번)
+        - 상품명 클릭 시 전체 목록의 input이 열림
+        - 상품명 업데이트 후 input창 => 목록으로 변경
+- useEffect사용 Request failed with status code 404
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## ✔ 사용 라이브러리
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+typescript, javascript
+Axios , react-query, react-router-dom, recoil, rxjs
+tailwindcss, ant-design
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ✔ 설치
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+$ npm i
+$ npm run start
+```

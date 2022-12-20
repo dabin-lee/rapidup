@@ -40,7 +40,7 @@ export const Main = () => {
         const subscription = inputChange$
             .pipe(debounceTime(1000))
             .subscribe((value) => {
-                // console.log("value: ", value);
+                console.log("value: ", value);
                 // doQuery(value);
                 changTit({
                     id: value.id,
