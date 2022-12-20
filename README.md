@@ -43,17 +43,6 @@
     - 수정한 상품만 리렌더링
 ```
 
-## 미해결 부분
-
-```
-- client state부분에 정리
-    <img width="342" alt="errImg" src="https://user-images.githubusercontent.com/57528886/208594322-b57163e1-fede-4a1b-ae8b-4d16899c89a8.png">
-    - 구현내용 3번)
-        - 상품명 클릭 시 전체 목록의 input이 열림
-        - 상품명 업데이트 후 input창 => 목록으로 변경
-- useEffect사용 Request failed with status code 404
-```
-
 ## ✔ 사용 라이브러리
 
 ```
@@ -67,4 +56,17 @@ tailwindcss, ant-design
 ```
 $ npm i
 $ npm run start
+```
+
+
+
+### 미해결 부분
+
+<img width="342" alt="errImg" src="https://user-images.githubusercontent.com/57528886/208594322-b57163e1-fede-4a1b-ae8b-4d16899c89a8.png">
+
+```
+- client state부분에 정리
+    - 구현내용 3번)
+        - 상품명 클릭 시 전체 목록의 input이 열림
+        - 상품명 업데이트 후 input창 => 목록으로 변경
 ```
