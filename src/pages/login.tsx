@@ -51,67 +51,74 @@ export const Login = () => {
     };
 
     return (
-        <div>
-            <Form
-                name="basic"
-                labelCol={{
-                    span: 8,
-                }}
-                wrapperCol={{
-                    span: 16,
-                }}
-                initialValues={{
-                    remember: true,
-                }}
-                autoComplete="off"
-                onFinish={() => {
-                    const params: LoginDTO = {
-                        name: userId,
-                        password: passWord,
-                    };
-                    login(params);
-                }}
-            >
-                <Form.Item
-                    label="Username"
-                    name="username"
-                    rules={[
-                        {
-                            required: true,
-                            message: "Please input your username!",
-                        },
-                    ]}
-                >
-                    <Input value={userId} onChange={(e) => chgName(e)} />
-                </Form.Item>
-
-                <Form.Item
-                    label="Password"
-                    name="password"
-                    rules={[
-                        {
-                            required: true,
-                            message: "Please input your password!",
-                        },
-                    ]}
-                >
-                    <Input.Password
-                        value={passWord}
-                        onChange={(e) => chgPassword(e)}
-                    />
-                </Form.Item>
-
-                <Form.Item
+        <div className="w-full h-screen">
+            <div className="w-full h-full flex justify-center items-center flex-col">
+                <Form
+                    name="basic"
+                    labelCol={{
+                        span: 8,
+                    }}
                     wrapperCol={{
-                        offset: 8,
                         span: 16,
                     }}
+                    initialValues={{
+                        remember: true,
+                    }}
+                    autoComplete="off"
+                    onFinish={() => {
+                        const params: LoginDTO = {
+                            name: userId,
+                            password: passWord,
+                        };
+                        login(params);
+                    }}
+                    className="p-3 border"
                 >
-                    <Button type="primary" htmlType="submit">
-                        Submit
-                    </Button>
-                </Form.Item>
-            </Form>
+                    <Form.Item
+                        label="Username"
+                        name="username"
+                        rules={[
+                            {
+                                required: true,
+                                message: "Please input your username!",
+                            },
+                        ]}
+                    >
+                        <Input value={userId} onChange={(e) => chgName(e)} />
+                    </Form.Item>
+
+                    <Form.Item
+                        label="Password"
+                        name="password"
+                        rules={[
+                            {
+                                required: true,
+                                message: "Please input your password!",
+                            },
+                        ]}
+                    >
+                        <Input.Password
+                            value={passWord}
+                            onChange={(e) => chgPassword(e)}
+                        />
+                    </Form.Item>
+
+                    <Form.Item
+                        wrapperCol={{
+                            offset: 8,
+                            span: 16,
+                        }}
+                    >
+                        <Button
+                            type="primary"
+                            htmlType="submit"
+                            className="bg-slate-300"
+                        >
+                            Submit
+                        </Button>
+                    </Form.Item>
+                </Form>
+            </div>
         </div>
     );
 };

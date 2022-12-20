@@ -9,25 +9,20 @@ export const useFetchTitle = () => {
     const QueryClient = useQueryClient();
     return useMutation(fetchTitle, {
         onSuccess: (data) => {
+            // console.log("data: ", data);
             QueryClient.setQueryData(["productList"], (oldQueryData) => {
-                console.log("data!!!!!:", data);
-                console.log("oldQueryData: ", oldQueryData);
+                // console.log("data!!!!!:", data);
+                // console.log("oldQueryData: ", oldQueryData);
 
                 const found = oldQueryData.list.find(
                     (item) => item.id === data.id
                 );
                 found.title = data.title;
             });
+            QueryClient.invalidateQueries(["productList", data.id]);
         },
-    });
-};
-
-export const FetchiTitleFromModal = () => {
-    const QueryClient = useQueryClient();
-    return useMutation(fetchTitle, {
-        onSuccess: (data) => {
-            QueryClient.setQueryData(["productList", data.id], data);
-            QueryClient.invalidateQueries(["productList"]);
-        },
+        // onError: (err) => {
+        //     console.log("err:", err.message, "페치데이터 에러");
+        // },
     });
 };

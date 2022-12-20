@@ -1,23 +1,25 @@
 import { useState } from "react";
 import { Button, Modal, Input } from "antd";
 import { IModalprops } from "../ts/modal.props.dto";
-import { FetchiTitleFromModal } from "../hooks/useFetchData";
+import { useFetchTitle } from "../hooks/useFetchData";
 
 export const ItemModal = ({ item, open, setOpen }: IModalprops) => {
     const [loading, setLoading] = useState(false);
     const [chgTitInModal, setChgTitInModal] = useState("");
-    const { mutate: changTit, isError } = FetchiTitleFromModal();
-
+    const { mutate: changTit, isError, isSuccess } = useFetchTitle();
+    if (isSuccess) {
+        console.log("Success");
+    }
     if (isError) {
-        console.log("isError: ", isError);
+        console.log("Error");
     }
     const handleOk = (item: any) => {
         setLoading(true);
+        changTit({
+            id: item.id,
+            title: chgTitInModal,
+        });
         setTimeout(() => {
-            changTit({
-                id: item.id,
-                title: chgTitInModal,
-            });
             setLoading(false);
             setOpen(false);
         }, 2000);
