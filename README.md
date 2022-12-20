@@ -24,7 +24,23 @@
 ┗ 📜index.tsx
 ```
 
-## 기능
+## ✔ 사용 라이브러리
+
+```
+typescript, javascript
+Axios , react-query, react-router-dom, recoil, rxjs
+tailwindcss, ant-design
+```
+
+## ✔ 설치
+
+```
+$ npm i
+$ npm run start
+```
+
+
+## ✔ 기능
 
 ```
 ✅ 1. 로그인하기
@@ -42,22 +58,6 @@
     - 팝업 닫히고 상품명이 반영
     - 수정한 상품만 리렌더링
 ```
-
-## ✔ 사용 라이브러리
-
-```
-typescript, javascript
-Axios , react-query, react-router-dom, recoil, rxjs
-tailwindcss, ant-design
-```
-
-## ✔ 설치
-
-```
-$ npm i
-$ npm run start
-```
-
 
 
 ### 미해결 부분
